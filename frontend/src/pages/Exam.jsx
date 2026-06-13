@@ -150,7 +150,7 @@ export default function Exam() {
         {currentQ.text && <h3 style={{marginBottom: '1rem'}}>{currentQ.text}</h3>}
         {currentQ.imageUrl && (
           <div style={{ textAlign: 'center', marginBottom: '1.5rem', width: '100%' }}>
-            <img src={`${import.meta.env.VITE_API_URL || ''}${currentQ.imageUrl}`} alt="Question" style={{ width: '100%', objectFit: 'contain', borderRadius: '8px', imageRendering: 'high-quality', background: 'rgba(255,255,255,0.02)' }} />
+            <img src={`https://formsx-production.up.railway.app${currentQ.imageUrl}`} alt="Question" style={{ width: '100%', objectFit: 'contain', borderRadius: '8px', imageRendering: 'high-quality', background: 'rgba(255,255,255,0.02)' }} />
           </div>
         )}
 

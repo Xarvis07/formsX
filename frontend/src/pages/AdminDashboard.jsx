@@ -411,7 +411,7 @@ export default function AdminDashboard() {
                         </select>
                       </div>
 
-                      {q.imageUrl && <img src={`${import.meta.env.VITE_API_URL || ''}${q.imageUrl}`} alt="Question visual" style={{ maxWidth: '100%', objectFit: 'contain', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', imageRendering: 'high-quality' }} />}
+                      {q.imageUrl && <img src={`https://formsx-production.up.railway.app${q.imageUrl}`} alt="Question visual" style={{ maxWidth: '100%', objectFit: 'contain', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', imageRendering: 'high-quality' }} />}
 
                       {/* Options Editor */}
                       {(q.questionType === 'Multiple choice' || q.questionType === 'Checkboxes' || q.questionType === 'Drop-down' || q.questionType === 'Linear scale' || q.questionType === 'Multiple-choice grid' || !q.questionType) && (
@@ -494,7 +494,7 @@ export default function AdminDashboard() {
                         </div>
                       </div>
 
-                      {q.imageUrl && <img src={`${import.meta.env.VITE_API_URL || ''}${q.imageUrl}`} alt="Question visual" style={{ maxWidth: '100%', objectFit: 'contain', borderRadius: '8px', marginBottom: '1.5rem', background: 'rgba(255,255,255,0.05)', imageRendering: 'high-quality' }} />}
+                      {q.imageUrl && <img src={`https://formsx-production.up.railway.app${q.imageUrl}`} alt="Question visual" style={{ maxWidth: '100%', objectFit: 'contain', borderRadius: '8px', marginBottom: '1.5rem', background: 'rgba(255,255,255,0.05)', imageRendering: 'high-quality' }} />}
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                         {q.questionType === 'Multiple-choice grid' && (
