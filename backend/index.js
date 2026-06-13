@@ -45,7 +45,7 @@ mongoose.connect(MONGO_URI)
     console.error('MongoDB connection error:', err);
   });
 
-const path = require('path');
+
 
 // Backend is now standalone (Frontend hosted on Vercel)
 app.get('/', (req, res) => {
