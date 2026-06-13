@@ -18,9 +18,13 @@ export default function AdminLogin() {
       navigate('/admin/dashboard');
     } catch (err) {
       if (!err.response) {
-        setError('Server is offline! Please start the backend server.');
-      } else {
+        setError('Server is offline or Network Error! Check API URL.');
+      } else if (err.response.status === 401) {
         setError('Invalid username or password');
+      } else if (err.response.status === 404) {
+        setError('API Endpoint not found. Ensure VITE_API_URL is correct.');
+      } else {
+        setError(err.response?.data?.error || `Server Error: ${err.response.status}`);
       }
     }
   };
