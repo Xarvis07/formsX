@@ -10,6 +10,14 @@ dotenv.config();
 
 const app = express();
 
+const path = require('path');
+const fs = require('fs');
+
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
@@ -39,14 +47,10 @@ mongoose.connect(MONGO_URI)
 
 const path = require('path');
 
-// We'll start the server anyway so the user can test if the app runs
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
-  const buildPath = path.join(__dirname, '../frontend/dist');
-  app.use(express.static(buildPath));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(buildPath, 'index.html'));
-  });
-}
+// Backend is now standalone (Frontend hosted on Vercel)
+app.get('/', (req, res) => {
+  res.json({ status: 'API is running' });
+});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
